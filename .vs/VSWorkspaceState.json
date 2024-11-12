@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\components",
+    "\\src\\app\\components\\events-add",
+    "\\src\\app\\components\\events-edit",
+    "\\src\\app\\components\\events-list",
+    "\\src\\app\\models",
+    "\\src\\app\\services"
+  ],
+  "SelectedNode": "\\src\\app\\components\\events-add\\events-add.component.html",
+  "PreviewInSolutionExplorer": false
+}

@@ -1,0 +1,23 @@
+<div class="card mt-5">
+    <div class="card-header">Pridėti naują renginį</div>
+    <div class="card-body">
+      <div class="mb-3">
+        <label for="name" class="form-label">Renginio pavadinimas</label>
+        <input type="text" name="name" id="name" class="form-control" [(ngModel)]="name">
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Renginio aprašas</label>
+        <input type="text" name="description" id="description" class="form-control" [(ngModel)]="description">
+      </div>
+      <div class="mb-3">
+        <label for="location" class="form-label">Renginio vieta</label>
+        <input type="text" name="location" id="location" class="form-control" [(ngModel)]="location">
+      </div>
+      <div class="mb-3">
+        <label for="date" class="form-label">Data</label>
+        <input type="date" name="date" id="date" class="form-control" [(ngModel)]="date">
+      </div>
+
+      <button class="btn btn-success" (click)="addNewEvent()">Pridėti</button>
+    </div>
+</div>

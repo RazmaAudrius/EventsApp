@@ -1,0 +1,48 @@
+<div class="card mt-5">
+    <div class="card-header">Renginių sąrašas</div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Pavadinimas
+                    </th>
+                    <th>
+                        Aprašas
+                    </th>
+                    <th>
+                        Vieta
+                    </th>
+                    <th style="width: 200px;">
+                        Data
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let event of events; let i=index">
+                <td>
+                  {{ event.name }}
+                </td>
+                <td>
+                  {{ event.description }}
+                </td>
+                <td>
+                  {{ event.location }}
+                </td>
+                <td>
+                  {{ event.date }}
+                </td>
+                <td>
+                  <a class="btn btn-success me-3" [routerLink]="['/event', event.id]">Redaguoti</a>
+                  <button class="btn btn-danger" (click)="deleteEvent(event.id)">Ištrinti</button>
+                </td>
+
+              </tr>
+            </tbody>
+
+        </table>
+        
+           
+        
+    </div>
+</div>
