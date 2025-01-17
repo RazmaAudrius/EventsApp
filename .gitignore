@@ -40,3 +40,6 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+/.vs/EventsApp/FileContentIndex
+/.vs/EventsApp/v17
+/.vs/slnx.sqlite
