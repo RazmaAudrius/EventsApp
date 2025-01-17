@@ -3,27 +3,34 @@ import { eventsService } from '../../services/events.service';
 import { Event } from '../../models/Event';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { LoadingComponent } from "../loading/loading.component";
 
 @Component({
   selector: 'app-events-list',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, LoadingComponent],
   templateUrl: './events-list.component.html',
   styleUrl: './events-list.component.css'
 })
 export class eventsListComponent {
 
-  public events:Event[]=[];
+  public events: Event[] = [];
+  public isLoading = false;
+  public isError = false;
 
-  private loadData(){
-    this.eventsService.loadEvents().subscribe( (data)=>{
-      this.events =[];
-      for (let k in data){
-       data[k].id=k;
-        this.events.push(data[k]);
+  private loadData() {
+    this.isLoading = true;
+    this.eventsService.loadEvents().subscribe({
+      next: (data) => {
+        this.events = data;
+        this.isLoading = false;
+        this.isError = false;
+      },
+      error: (data) => {
+        this.isError = true;
+        this.isLoading = false;
       }
-      console.log(this.events);
-     });
+    });
   }
 
   public constructor(private eventsService: eventsService){
